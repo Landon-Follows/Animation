@@ -19,6 +19,9 @@ class Sketch : NSObject {
         // Set starting position
         x = 250
         
+        //Turn Off Borders
+        canvas.drawShapesWithBorders = false
+        
     }
     
     // This function runs repeatedly, forever, to create the animated effect
@@ -28,7 +31,9 @@ class Sketch : NSObject {
         x += 1
         
         // Draw an ellipse in the middle of the canvas
+        canvas.fillColor = Color.green
         canvas.drawEllipse(at: Point(x: x, y: 250), width: 50, height: 50)
+       
         
     }
     
