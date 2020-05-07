@@ -5,36 +5,46 @@ class Sketch : NSObject {
     
     // NOTE: Every sketch must contain an object of type Canvas named 'canvas'
     //       Therefore, the line immediately below must always be present.
+    
     let canvas : Canvas
     
     // Position of circle
+    
     var x : Int
     
-    // This function runs once
+    var offset : Int
+    
+    // Define Circles
+    
+    let black = Color.black
+    
+    let blue = Color.blue
+    
+    let green = Color.green
+    
+    let orange = Color.orange
+    
+    let purple = Color.purple
+    
+    
+    var drawShapesWithBorders = false
+    
+    // Function - 1
+    
     override init() {
         
-        // Create canvas object – specify size
+        // Find value of canvas object
+        
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
+        
         x = 250
         
-        //Turn Off Borders
-        canvas.drawShapesWithBorders = false
+        offset = 250
         
     }
     
-    // This function runs repeatedly, forever, to create the animated effect
-    func draw() {
-        
-        // Change position
-        x += 1
-        
-        // Draw an ellipse in the middle of the canvas
-        canvas.fillColor = Color.green
-        canvas.drawEllipse(at: Point(x: x, y: 250), width: 50, height: 50)
-       
-        
-    }
+    // Draw Animated Run Function
     
 }
